@@ -1,0 +1,22 @@
+<section>
+    <form [formGroup]="form" (ngSubmit)="submitCustomer()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" formControlName="phone">
+          </div>
+        <div class="form-group">
+          <label for="email-address">Email address</label>
+          <input type="email" class="form-control" id="email-address" formControlName="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+</section>

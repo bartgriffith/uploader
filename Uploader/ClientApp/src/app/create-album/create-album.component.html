@@ -1,0 +1,22 @@
+<section>
+    <form [formGroup]="form" (ngSubmit)="submitAlbum()">
+        <div class="form-group">
+            <label for="name">Album Name</label>
+            <input type="text" class="form-control" id="name" formControlName="albumName">
+        </div>
+        <div class="form-group">
+            <label for="customer">Select Customer</label>
+            <select class="form-control" id="customer" formControlName="customerName">
+                <option *ngFor="let customerName of customerList" [value]="customerName">{{ customerName }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input multiple type="file" (change)="uploadFile($event)">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+      <div id="fileProgressSection" *ngIf="progressGroup.length > 0">
+        <app-file-progress *ngFor="let progress of progressGroup;let i = index;" [progress]="progress" [filename]="uploadForm.value.albumImages[i].name"></app-file-progress>
+    </div>
+</section>
